@@ -1,3 +1,5 @@
+-- LMS stands for library management system
+
 -- Books
 CREATE TABLE books (
     book_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -90,12 +92,12 @@ CREATE TABLE loans (
 
 SELECT * FROM loans;
 
--- Now, time to enter the data. I created CSVs conatining some random data
+-- Now, time to enter the data. I created TSVs containing some random data (found in data_src)
 SET FOREIGN_KEY_CHECKS=0; -- Used this to allow me to import the foreign key values in tables like Books
 SET sql_mode = ''; -- Used this to allow me to import blank date values into the loans table, also had to update the dates to NULL after
 LOAD DATA INFILE 'file path' INTO TABLE authors (author_first_name, author_last_name); -- General import format, didn't need ID columns as they are auto-increment
 
--- Need to update the NULL dates in loans to NULL
+-- Need to update the 0000-00-00 dates in loans to NULL
 UPDATE loans
 SET date_returned = NULL
 WHERE date_returned = 0000-00-00;
