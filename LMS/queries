@@ -40,7 +40,7 @@ FROM loans
 JOIN clients
 ON loans.client_id = clients.client_id
 GROUP BY book_id, branch_id; 
--- This query shows the counts for each book per branch, we can already see that branch 1 has a max of 2 on book 35 and branch 2 has a max of 3 on book 37 while branch 3 doesn't have a max
+-- This query shows the counts for each book per branch
 
 -- Now we see the summary, branch 3 doesn't have a max so it doesn't really work for that one 
 SELECT F.counter max_loans, F.book, F.branch
