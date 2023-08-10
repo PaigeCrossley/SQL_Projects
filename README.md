@@ -4,4 +4,6 @@ I decided to learn about SQL as it is an important tool for data analysts/scient
 
 I used PopSQL with MySQL.
 
+LMS = Library Management System
+
 I also discuss the project more in depth on my blog: https://paigecrossley.wixsite.com/blog.
